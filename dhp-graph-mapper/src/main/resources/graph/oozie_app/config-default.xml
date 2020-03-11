@@ -21,6 +21,6 @@
     </property>
     <property>
         <name>hive_db_name</name>
-        <value>openaire</value>
+        <value>stats_wf_db_sp</value>
     </property>
 </configuration>
