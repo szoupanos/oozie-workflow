@@ -16,7 +16,8 @@
         <hive xmlns="uri:oozie:hive-action:0.2">
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
-            <script>/eu/dnetlib/dhp/graph/hive/step1.sql</script>
+<!--             <script>/graph/hive/step1.sql</script> -->
+            <script>step1.sql</script>
             <param>hive_db_name=${hive_db_name}</param>
         </hive>
         <ok to="End"/>
