@@ -6,13 +6,13 @@
         </property>
     </parameters>
 
-    <start to="MapGraphIntoDataFrame"/>
+    <start to="CreateDB-Step1"/>
 
     <kill name="Kill">
         <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
     </kill>
 
-    <action name="Create DB - Step 1">
+    <action name="CreateDB-Step1">
         <hive xmlns="uri:oozie:hive-action:0.2">
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
