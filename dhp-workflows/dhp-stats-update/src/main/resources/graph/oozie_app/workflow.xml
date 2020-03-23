@@ -13,13 +13,19 @@
     </kill>
 
     <action name="CreateDB-Step1">
-        <hive xmlns="uri:oozie:hive-action:0.2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
-<!--             <script>/graph/hive/step1.sql</script> -->
+            <configuration>
+                <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <jdbc-url>${hive_jdbc_url}/${hive_db_name}</jdbc-url>
             <script>step1.sql</script>
             <param>hive_db_name=${hive_db_name}</param>
-        </hive>
+        </hive2>
         <ok to="End"/>
         <error to="Kill"/>
     </action>
