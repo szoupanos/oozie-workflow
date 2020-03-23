@@ -23,7 +23,7 @@
                 </property>
             </configuration>
             <jdbc-url>${hive_jdbc_url}/${hive_db_name}</jdbc-url>
-            <script>step1.sql</script>
+            <script>scripts/step1.sql</script>
             <param>hive_db_name=${hive_db_name}</param>
         </hive2>
         <ok to="End"/>

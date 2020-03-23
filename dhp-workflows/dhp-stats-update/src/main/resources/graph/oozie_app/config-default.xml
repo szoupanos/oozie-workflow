@@ -17,7 +17,7 @@
     </property>
     <property>
         <name>hive_db_name</name>
-        <value>stats_wf_db_sp</value>
+        <value>stats_wf_db_spyros2</value>
     </property>
     <property>
         <name>hive_metastore_uris</name>
