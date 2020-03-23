@@ -6,13 +6,13 @@
         </property>
     </parameters>
 
-    <start to="CreateDB-Step1"/>
+    <start to="Step1-CreateDB"/>
 
     <kill name="Kill">
         <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
     </kill>
 
-    <action name="CreateDB-Step1">
+    <action name="Step1-CreateDB">
         <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
@@ -24,6 +24,40 @@
             </configuration>
             <jdbc-url>${hive_jdbc_url}/${hive_db_name}</jdbc-url>
             <script>scripts/step1.sql</script>
+            <param>hive_db_name=${hive_db_name}</param>
+        </hive2>
+        <ok to="Step3"/>
+        <error to="Kill"/>
+    </action>
+    <action name="Step2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <jdbc-url>${hive_jdbc_url}/${hive_db_name}</jdbc-url>
+            <script>scripts/step2.sql</script>
+            <param>hive_db_name=${hive_db_name}</param>
+        </hive2>
+        <ok to="Step3"/>
+        <error to="Kill"/>
+    </action>
+    <action name="Step3">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <jdbc-url>${hive_jdbc_url}/${hive_db_name}</jdbc-url>
+            <script>scripts/step3.sql</script>
             <param>hive_db_name=${hive_db_name}</param>
         </hive2>
         <ok to="End"/>
