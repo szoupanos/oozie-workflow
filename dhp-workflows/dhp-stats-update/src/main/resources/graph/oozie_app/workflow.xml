@@ -1,7 +1,7 @@
 <workflow-app name="import_infospace_graph" xmlns="uri:oozie:workflow:0.5">
     <parameters>
         <property>
-            <name>hive_db_name</name>
+            <name>stats_db_name</name>
             <description>the target hive database name</description>
         </property>
     </parameters>
@@ -22,13 +22,18 @@
                     <value>${hive_metastore_uris}</value>
                 </property>
             </configuration>
-            <jdbc-url>${hive_jdbc_url}/${hive_db_name}</jdbc-url>
+            <jdbc-url>${hive_jdbc_url}</jdbc-url>
             <script>scripts/step1.sql</script>
-            <param>hive_db_name=${hive_db_name}</param>
+            <!-- <param>hive_db_name=${hive_db_name}</param> -->
+
+			<param>stats_db_name=${stats_db_name}</param>
+			<!-- <param>openaire_db_name=${openaire_db_name}</param> -->
+
         </hive2>
-        <ok to="Step3"/>
+        <ok to="End"/>
         <error to="Kill"/>
     </action>
+<!-- 
     <action name="Step2">
         <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
@@ -63,6 +68,7 @@
         <ok to="End"/>
         <error to="Kill"/>
     </action>
+ -->
 
     <end name="End"/>
 </workflow-app>
