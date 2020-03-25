@@ -27,13 +27,6 @@
 		<name>oozie.wf.workflow.notification.url</name>
 		<value>{serviceUrl}/v1/oozieNotification/jobUpdate?jobId=$jobId%26status=$status</value>
 	</property>
-<!-- 
-    <property>
-        <name>hive_db_name</name>
-        <value>stats_wf_db_spyros2</value>
-    </property>
- -->
-
     <property>
         <name>stats_db_name</name>
         <value>stats_wf_db_spyros2</value>
