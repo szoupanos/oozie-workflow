@@ -35,4 +35,8 @@
         <name>openaire_db_name</name>
         <value>openaire</value>
     </property>
+    <property>
+        <name>external_stats_db_name</name>
+        <value>stats_ext</value>
+    </property>
 </configuration>
