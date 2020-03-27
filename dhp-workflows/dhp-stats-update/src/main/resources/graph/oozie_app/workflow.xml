@@ -49,7 +49,6 @@
         <ok to="Step2_2"/>
         <error to="Kill"/>
     </action>
-	<!-- The following has parsing problems (step2_2.sql) -->
     <action name="Step2_2">
         <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
@@ -213,6 +212,7 @@
         <ok to="Step4_1"/>
         <error to="Kill"/>
     </action>
+    
     <action name="Step4_1">
         <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
@@ -375,7 +375,6 @@
         <ok to="Step4_10"/>
         <error to="Kill"/>
     </action>
-    
     <action name="Step4_10">
     <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
@@ -394,6 +393,7 @@
         <ok to="Step5_1"/>
         <error to="Kill"/>
     </action>
+    
     <action name="Step5_1">
     	<hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>

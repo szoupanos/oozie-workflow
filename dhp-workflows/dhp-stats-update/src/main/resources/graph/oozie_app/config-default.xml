@@ -15,6 +15,8 @@
         <name>oozie.action.sharelib.for.spark</name>
         <value>spark2</value>
     </property>
+<!--
+	<!-- For CNR cluster - Start --> 
 	<property>
         <name>hive_metastore_uris</name>
         <value>thrift://hadoop-edge3.garr-pa1.d4science.org:9083</value>
@@ -23,6 +25,18 @@
         <name>hive_jdbc_url</name>
         <value>jdbc:hive2://hadoop-edge3.garr-pa1.d4science.org:10000</value>
     </property>
+    <!-- For CNR cluster - End -->
+ -->
+	<!-- For OCEAN cluster - Start -->
+     <property>
+        <name>hive_metastore_uris</name>
+        <value>thrift://iis-cdh5-test-m3.ocean.icm.edu.pl:9083</value>
+    </property>
+    <property>
+        <name>hive_jdbc_url</name>
+        <value>jdbc:hive2://iis-cdh5-test-m3.ocean.icm.edu.pl:10000</value>
+    </property>
+    <!-- For OCEAN cluster - End -->
 	<property>
 		<name>oozie.wf.workflow.notification.url</name>
 		<value>{serviceUrl}/v1/oozieNotification/jobUpdate?jobId=$jobId%26status=$status</value>
