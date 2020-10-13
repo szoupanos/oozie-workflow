@@ -481,7 +481,7 @@
 		<dhp.jackson.version>2.9.6</dhp.jackson.version>
 		<dhp.commons.lang.version>3.5</dhp.commons.lang.version>
 		<scala.version>2.11.12</scala.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<mongodb.driver.version>3.4.2</mongodb.driver.version>
 	</properties>
 </project>
